@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slider</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -20,17 +21,56 @@
                 <div id="left-main-app">
                     <!--parte fissa superiore colonna sinistra-->
                     <div id="top-left">
-
+                        <!--avatar + nome-->
+                        <div #="top-left-left">
+                            <!--avatar-->
+                            <div class="avatar">
+                                <img src="./img/avatar_1.jpg" class="width100" alt="">
+                            </div>
+                            <!--nome-->
+                            <div class="nome">
+                                <div class="font-nome">
+                                    Michele
+                                </div>
+                            </div>
+                        </div>
+                        <!--icone left-right-->
+                        <div #="top-left-right">
+                            <div class="icone">
+                                <a href="#"><i class="fa-solid fa-message" style="color: #cfcfcf;"></i></a>
+                                <a href="#"><i class="fa-solid fa-download" style="color: #cfcfcf;"></i></a>
+                                <a href="#"><i class="fa-solid fa-download" style="color: #cfcfcf;"></i></a>
+                            </div>
+                        </div>
                     </div>
                     <!--parte centrale colonna sinistra-->
                     <div id="main-left">
                         <!--notifiche-->
                         <div id="main-1-left">
-
+                            <div class="avatar">
+                                <img src="./img/avatar_1.jpg" class="width100" alt="">
+                            </div>
+                            <div class="nome-accesso">
+                                <ul>
+                                    <li><div class="font-nome">michele</div></li>
+                                    <li><div class="">ultimo acceso oggi alle 12.00</div></li>
+                                </ul>
+                            </div>
                         </div>
                         <!--ricerca-->
                         <div id="main-2-left">
-
+                            <div class="button-input">
+                                <!--bottone-->
+                                <div class="button-left">
+                                    <button>
+                                        <i class="fa-solid fa-magnifying-glass" style="color: #cfcfcf;"></i>
+                                    </button>
+                                </div>
+                                <!--input-->
+                                <div class="input-left">
+                                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                                </div>
+                            </div>
                         </div>
                         <!--lista contatti-->
                         <div id="main-3-left">
@@ -40,17 +80,47 @@
                 </div>
                 <!--colonna destra app-->
                 <div id="right-main-app">
-                    <!--parte fissa superiore colonna destra-->
+                    <!--parte superiore colonna destra-->
                     <div id="top-right">
-
+                        <div id="#top-right-left">
+                            <!--avatar-->
+                            <div class="avatar">
+                                <img src="./img/avatar_1.jpg" class="width100" alt="">
+                            </div>
+                            <!--nome e acceso-->
+                            <div class="nome-accesso">
+                                <ul>
+                                    <li><div class="font-nome">michele</div></li>
+                                    <li><div class="font-accesso">ultimo acceso oggi alle 12.00</div></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--icone top-right-->
+                        <div id="#top-right-right">
+                            <div class="icone">
+                                <a href="#"><i class="fa-solid fa-message" style="color: #cfcfcf;"></i></a>
+                                <a href="#"><i class="fa-solid fa-download" style="color: #cfcfcf;"></i></a>
+                                <a href="#"><i class="fa-solid fa-download" style="color: #cfcfcf;"></i></a>
+                            </div>
+                        </div>
                     </div>
                     <!--parte centrale colonna destra (CHAT)-->
                     <div id="main-right">
                         
                     </div>
                     <!--parte fissa inferiore colonna destra-->
-                    <div id="bottom-right">
-
+                    <div id="button-right">
+                        <div id="content-button-right">
+                            <div class="icone-button">
+                                <a href="#"><i class="fa-solid fa-message" style="color: #cfcfcf;"></i></a>
+                            </div>
+                            <div id="bottom_input">
+                                <input type="text"placeholder="scrivi un messaggio">     
+                            </div>
+                            <div class="icone-button">
+                                <a href="#"><i class="fa-solid fa-message" style="color: #cfcfcf;"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
