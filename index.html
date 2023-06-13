@@ -8,6 +8,7 @@
     <title>Slider</title>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
@@ -25,21 +26,21 @@
                         <div #="top-left-left">
                             <!--avatar-->
                             <div class="avatar">
-                                <img src="./img/avatar_1.jpg" class="width100" alt="">
+                                <img src="./img/avatar_io.jpg" class="width100" alt="">
                             </div>
                             <!--nome-->
                             <div class="nome">
                                 <div class="font-nome">
-                                    Michele
+                                    sofia
                                 </div>
                             </div>
                         </div>
                         <!--icone left-right-->
                         <div #="top-left-right">
                             <div class="icone">
-                                <a href="#"><i class="fa-solid fa-message" style="color: #cfcfcf;"></i></a>
-                                <a href="#"><i class="fa-solid fa-download" style="color: #cfcfcf;"></i></a>
-                                <a href="#"><i class="fa-solid fa-download" style="color: #cfcfcf;"></i></a>
+                                <a href="#"><i class="fa-solid fa-circle-notch" style="color: #8d8b8b;"></i></a>
+                                <a href="#"><i class="fa-solid fa-message" style="color: #8d8b8b;"></i></a>
+                                <a href="#"><i class="fa-solid fa-ellipsis-vertical" style="color: #8d8b8b;"></i></a>
                             </div>
                         </div>
                     </div>
@@ -48,12 +49,12 @@
                         <!--notifiche-->
                         <div id="main-1-left">
                             <div class="avatar">
-                                <img src="./img/avatar_1.jpg" class="width100" alt="">
+                                <div class="width100 center-icl"><i class="fa-solid fa-bell-slash fa-xl" style="color: #07d7f2;"></i></div>
                             </div>
                             <div class="nome-accesso">
                                 <ul>
-                                    <li><div class="font-nome">michele</div></li>
-                                    <li><div class="">ultimo acceso oggi alle 12.00</div></li>
+                                    <li><div class="font-nome ">ricevi notiiche di nuovi messaggi</div></li>
+                                    <li><div class="font-accesso"><a href="#">attiva notifiche deskop</a></div></li>
                                 </ul>
                             </div>
                         </div>
@@ -63,7 +64,7 @@
                                 <!--bottone-->
                                 <div class="button-left">
                                     <button>
-                                        <i class="fa-solid fa-magnifying-glass" style="color: #cfcfcf;"></i>
+                                        <i class="fa-solid fa-magnifying-glass" style="color: #8d8b8b;"></i>
                                     </button>
                                 </div>
                                 <!--input-->
@@ -74,7 +75,50 @@
                         </div>
                         <!--lista contatti-->
                         <div id="main-3-left">
-                            
+                            <ul>
+                                <li class="relativ">
+                                    <div class="avatar-2">
+                                        <img src="./img/avatar_1.jpg" class="width100" alt="">
+                                    </div>
+                                    <div class="nome-accesso-2">
+                                        <ul>
+                                            <li><div class="font-nome">michele</div></li>
+                                            <li><div class="font-accesso">ultimo messaggio inviato</div></li>
+                                        </ul>
+                                    </div>
+                                    <div class="ora">
+                                        <div class="font-accesso">12:00</div>
+                                    </div>
+                                </li>
+                                <li class="relativ">
+                                    <div class="avatar-2">
+                                        <img src="./img/avatar_1.jpg" class="width100" alt="">
+                                    </div>
+                                    <div class="nome-accesso-2">
+                                        <ul>
+                                            <li><div class="font-nome">michele</div></li>
+                                            <li><div class="font-accesso">ultimo messaggio inviato</div></li>
+                                        </ul>
+                                    </div>
+                                    <div class="ora">
+                                        <div class="font-accesso">12:00</div>
+                                    </div>
+                                </li>
+                                <li class="relativ">
+                                    <div class="avatar-2">
+                                        <img src="./img/avatar_1.jpg" class="width100" alt="">
+                                    </div>
+                                    <div class="nome-accesso-2">
+                                        <ul>
+                                            <li><div class="font-nome">michele</div></li>
+                                            <li><div class="font-accesso">ultimo messaggio inviato</div></li>
+                                        </ul>
+                                    </div>
+                                    <div class="ora">
+                                        <div class="font-accesso">12:00</div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -98,27 +142,64 @@
                         <!--icone top-right-->
                         <div id="#top-right-right">
                             <div class="icone">
-                                <a href="#"><i class="fa-solid fa-message" style="color: #cfcfcf;"></i></a>
-                                <a href="#"><i class="fa-solid fa-download" style="color: #cfcfcf;"></i></a>
-                                <a href="#"><i class="fa-solid fa-download" style="color: #cfcfcf;"></i></a>
+                                <a href="#"><i class="fa-solid fa-magnifying-glass" style="color: #8d8b8b;"></i></a>
+                                <a href="#"><i class="fa-solid fa-paperclip" style="color: #8d8b8b;"></i></a>
+                                <a href="#"><i class="fa-solid fa-ellipsis-vertical" style="color: #8d8b8b;"></i></a>
                             </div>
                         </div>
                     </div>
                     <!--parte centrale colonna destra (CHAT)-->
                     <div id="main-right">
-                        
+                        <div class="chat">
+                            <div class="messaggio inviato">
+                              <p>Messaggio inviato 1</p>
+                            </div>
+                            <div class="messaggio ricevuto">
+                              <p>Messaggio ricevuto 1</p>
+                            </div>
+                            <div class="messaggio inviato">
+                              <p>Messaggio inviato 2</p>
+                            </div>
+                            <div class="messaggio ricevuto">
+                              <p>Messaggio ricevuto 2</p>
+                            </div>
+                            <div class="messaggio inviato">
+                              <p>Messaggio inviato 3</p>
+                            </div>
+                            <div class="messaggio ricevuto">
+                              <p>Messaggio ricevuto 3</p>
+                            </div>
+                            <div class="messaggio inviato">
+                                <p>Messaggio inviato 1</p>
+                              </div>
+                              <div class="messaggio ricevuto">
+                                <p>Messaggio ricevuto 1</p>
+                              </div>
+                              <div class="messaggio inviato">
+                                <p>Messaggio inviato 2</p>
+                              </div>
+                              <div class="messaggio ricevuto">
+                                <p>Messaggio ricevuto 2</p>
+                              </div>
+                              <div class="messaggio inviato">
+                                <p>Messaggio inviato 3</p>
+                              </div>
+                              <div class="messaggio ricevuto">
+                                <p>Messaggio ricevuto 3</p>
+                              </div>
+                          </div>
                     </div>
                     <!--parte fissa inferiore colonna destra-->
                     <div id="button-right">
                         <div id="content-button-right">
                             <div class="icone-button">
-                                <a href="#"><i class="fa-solid fa-message" style="color: #cfcfcf;"></i></a>
+                                <a href="#"><i class="fa-regular fa-face-smile" style="color: #8d8b8b;"></i></a>
                             </div>
                             <div id="bottom_input">
                                 <input type="text"placeholder="scrivi un messaggio">     
                             </div>
                             <div class="icone-button">
-                                <a href="#"><i class="fa-solid fa-message" style="color: #cfcfcf;"></i></a>
+                                <a href="#"><i class="fa-solid fa-microphone" style="color: #8d8b8b;"></i></a>
                             </div>
                         </div>
                     </div>
@@ -127,8 +208,8 @@
         </div>
     </div>
     <!--link js e vue-->
-    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
-    <script src="./js/script.js"></script>
+    <!-- <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>-->
+    <!-- <script src="./js/script.js"></script>-->
 </body>
 
 </html>
