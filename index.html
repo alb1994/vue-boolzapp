@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Slider</title>
+    <title>BOOLZAPP</title>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -23,7 +23,7 @@
                     <!--parte fissa superiore colonna sinistra-->
                     <div id="top-left">
                         <!--avatar + nome-->
-                        <div #="top-left-left">
+                        <div id="top-left-left">
                             <!--avatar-->
                             <div class="avatar">
                                 <img src="./img/avatar_io.jpg" class="width100" alt="">
@@ -36,7 +36,7 @@
                             </div>
                         </div>
                         <!--icone left-right-->
-                        <div #="top-left-right">
+                        <div id="top-left-right">
                             <div class="icone">
                                 <a href="#"><i class="fa-solid fa-circle-notch" style="color: #8d8b8b;"></i></a>
                                 <a href="#"><i class="fa-solid fa-message" style="color: #8d8b8b;"></i></a>
@@ -76,46 +76,21 @@
                         <!--lista contatti-->
                         <div id="main-3-left">
                             <ul>
-                                <li class="relativ">
+                                <!-- creo una lista con tutti gli array oggetti-->
+                                <li class="relativ" v-for="(contact, index) in contacts" @click="selectContact(index)">
                                     <div class="avatar-2">
-                                        <img src="./img/avatar_1.jpg" class="width100" alt="">
+                                        <!--importo il l' avatar-->
+                                      <img :src="contact.avatar" class="width100" alt="">
                                     </div>
                                     <div class="nome-accesso-2">
-                                        <ul>
-                                            <li><div class="font-nome">michele</div></li>
-                                            <li><div class="font-accesso">ultimo messaggio inviato</div></li>
-                                        </ul>
+                                      <ul>
+                                        <!--importo il nome-->
+                                        <li><div class="font-nome">{{ contact.name }}</div></li>
+                                        <li><div class="font-accesso">ultimo messaggio inviato</div></li>
+                                      </ul>
                                     </div>
                                     <div class="ora">
-                                        <div class="font-accesso">12:00</div>
-                                    </div>
-                                </li>
-                                <li class="relativ">
-                                    <div class="avatar-2">
-                                        <img src="./img/avatar_1.jpg" class="width100" alt="">
-                                    </div>
-                                    <div class="nome-accesso-2">
-                                        <ul>
-                                            <li><div class="font-nome">michele</div></li>
-                                            <li><div class="font-accesso">ultimo messaggio inviato</div></li>
-                                        </ul>
-                                    </div>
-                                    <div class="ora">
-                                        <div class="font-accesso">12:00</div>
-                                    </div>
-                                </li>
-                                <li class="relativ">
-                                    <div class="avatar-2">
-                                        <img src="./img/avatar_1.jpg" class="width100" alt="">
-                                    </div>
-                                    <div class="nome-accesso-2">
-                                        <ul>
-                                            <li><div class="font-nome">michele</div></li>
-                                            <li><div class="font-accesso">ultimo messaggio inviato</div></li>
-                                        </ul>
-                                    </div>
-                                    <div class="ora">
-                                        <div class="font-accesso">12:00</div>
+                                      <div class="font-accesso">12:00</div>
                                     </div>
                                 </li>
                             </ul>
@@ -129,12 +104,12 @@
                         <div id="#top-right-left">
                             <!--avatar-->
                             <div class="avatar">
-                                <img src="./img/avatar_1.jpg" class="width100" alt="">
+                                <img :src="selectedAvatar" class="width100" alt="">
                             </div>
                             <!--nome e acceso-->
                             <div class="nome-accesso">
                                 <ul>
-                                    <li><div class="font-nome">michele</div></li>
+                                    <li><div class="font-nome" v-html="contactName"></div></li>
                                     <li><div class="font-accesso">ultimo acceso oggi alle 12.00</div></li>
                                 </ul>
                             </div>
@@ -151,43 +126,7 @@
                     <!--parte centrale colonna destra (CHAT)-->
                     <div id="main-right">
                         <div class="chat">
-                            <div class="messaggio inviato">
-                              <p>Messaggio inviato 1</p>
-                            </div>
-                            <div class="messaggio ricevuto">
-                              <p>Messaggio ricevuto 1</p>
-                            </div>
-                            <div class="messaggio inviato">
-                              <p>Messaggio inviato 2</p>
-                            </div>
-                            <div class="messaggio ricevuto">
-                              <p>Messaggio ricevuto 2</p>
-                            </div>
-                            <div class="messaggio inviato">
-                              <p>Messaggio inviato 3</p>
-                            </div>
-                            <div class="messaggio ricevuto">
-                              <p>Messaggio ricevuto 3</p>
-                            </div>
-                            <div class="messaggio inviato">
-                                <p>Messaggio inviato 1</p>
-                              </div>
-                              <div class="messaggio ricevuto">
-                                <p>Messaggio ricevuto 1</p>
-                              </div>
-                              <div class="messaggio inviato">
-                                <p>Messaggio inviato 2</p>
-                              </div>
-                              <div class="messaggio ricevuto">
-                                <p>Messaggio ricevuto 2</p>
-                              </div>
-                              <div class="messaggio inviato">
-                                <p>Messaggio inviato 3</p>
-                              </div>
-                              <div class="messaggio ricevuto">
-                                <p>Messaggio ricevuto 3</p>
-                              </div>
-                          </div>
+                            
                     </div>
                     <!--parte fissa inferiore colonna destra-->
                     <div id="button-right">
@@ -208,8 +147,8 @@
         </div>
     </div>
     <!--link js e vue-->
-    <!-- <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>-->
-    <!-- <script src="./js/script.js"></script>-->
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
