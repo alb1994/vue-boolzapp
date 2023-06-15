@@ -1,5 +1,3 @@
-
-
 const { createApp } = Vue;
 createApp({
     data(){
@@ -10,6 +8,13 @@ createApp({
             receivedMessages: [] ,
             //contenitore nome dell' oggetto selezionato 
             contactName: '',
+            //contenitore avatar selezionato
+            selectedAvatar: '',
+            //contenitore ricerca barra sinistra[non funzionante]
+            searchText: '',
+            //contenitore messaggio input utente
+            nuovoMessaggio: '',
+            messaggioOggetto: null,
             //array di oggetti
             contacts: [
                 {
@@ -171,14 +176,14 @@ createApp({
                             message: 'OK!!',
                             status: 'received'
                         }
-                    ],
+                    ], 
                 }
-            ]
-            
-            
+            ] 
+        
         }
-         
+
     },
+
     
         methods: {
             //creo funzione per dividere messaggi inviati e ricevuti 
@@ -187,11 +192,11 @@ createApp({
                 const formattedMessages = []; 
                 // Stato precedente (inizialmente null)
                 let prevStatus = null; 
-              
+
                 for (let i = 0; i < messages.length; i++) { // Ciclo "for" che scorre gli elementi dell'array "messages"
                   const message = messages[i]; // Messaggio corrente
                   const { status } = message; // Estrapola lo stato dal messaggio corrente
-              
+
                   if (status !== prevStatus) { // Se lo stato è diverso dallo stato precedente
                     prevStatus = status; // Aggiorna lo stato precedente con lo stato corrente
                     formattedMessages.push({ // Aggiungi un nuovo oggetto al formato dei messaggi
@@ -203,39 +208,39 @@ createApp({
                     lastMessage.message += '\n' + message.message; // Aggiungi il messaggio corrente al messaggio precedente con un newline
                   }
                 }
-              
+
                 return formattedMessages; // Restituisci l'array dei messaggi ordinati
               },
-              
+
               selectContact(index) {
                 // Ottieni il contatto selezionato
                 const selectedContact = this.contacts[index];
-                
+
                 // Aggiorna le informazioni del contatto attivo
                 this.contactName = selectedContact.name;
                 this.selectedAvatar = selectedContact.avatar;
-              
+
                 // ordina i messaggi del contatto selezionato
                 const messages = selectedContact.messages.map(message => ({
                   ...message,
                   class: message.status === 'sent' ? 'inviato' : 'ricevuto'
                 }));
-              
+
                 // Formatta i messaggi raggruppandoli per inviati e ricevuti
                 const formattedMessages = this.formatMessages(messages);
                 const sentMessages = formattedMessages.filter(message => message.status === 'sent');
                 const receivedMessages = formattedMessages.filter(message => message.status === 'received');
-              
+
                 // Aggiorna le variabili di stato dei messaggi inviati e ricevuti
                 this.sentMessages = sentMessages;
                 this.receivedMessages = receivedMessages;
-              
+
                 // Seleziona l'elemento del chat nel DOM
                 const chatElement = document.querySelector('.chat');
-              
+
                 // Rimuovi i messaggi precedenti dal chat
                 chatElement.innerHTML = '';
-              
+
                 // Funzione per creare un elemento messaggio nel DOM
                 const createMessageElement = (message, isSent) => {
                   const messageDiv = document.createElement('div');
@@ -245,14 +250,49 @@ createApp({
                   messageDiv.appendChild(messageContent);
                   return messageDiv;
                 };
-              
+
                 // Aggiungi i messaggi formattati al chat nel DOM
                 formattedMessages.forEach(message => {
                   const isSent = message.status === 'sent';
                   const messageDiv = createMessageElement(message, isSent);
                   chatElement.appendChild(messageDiv);
                 });
-            }
-    }
+                console.log(formattedMessages)
+            },
+            //creo funzione per immettere il messaggio dall' input 
+            inviaMessaggio() {
+                this.messaggioOggetto = {
+                  testo: this.nuovoMessaggio,
+                  data: new Date()
+                };
+                this.nuovoMessaggio = ''; 
+              //immetto nel dom messaggi che ho inviato 
+                const chatDiv = document.querySelector('.chat');
+                const nuovoMessaggioDiv = document.createElement('div');
+                nuovoMessaggioDiv.classList.add('messaggio', 'inviato');
+                nuovoMessaggioDiv.innerHTML = `<p>${this.messaggioOggetto.testo}</p>`;
+                chatDiv.appendChild(nuovoMessaggioDiv);
+               //immetto nel dom la risposta automatica  
+                setTimeout(() => {
+                    const okMessaggioDiv = document.createElement('div');
+                    okMessaggioDiv.classList.add('messaggio', 'ricevuto');
+                    okMessaggioDiv.innerHTML = `<p>Ok</p>`;
+                    chatDiv.appendChild(okMessaggioDiv);
+                  }, 1000);
+              },
+              //creo funzione per filtrare nomi [ancora non funzionante]
+              filtraContatti() {
+                for (let i = 0; i < this.contacts.length; i++) {
+                  let contact = this.contacts[i];
+                  if (contact.name.includes(this.searchText)) {
+                    contact.visible = true;
+                  } else {
+                    contact.visible = false;
+                  }
+                }
+              }
+            
+                }
+            
 
 }).mount('#app');
